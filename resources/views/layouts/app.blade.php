@@ -208,39 +208,76 @@
         .footer {
             background: #1a1a1a;
             color: white;
-            padding: 60px 0 30px;
+            padding: 80px 0 40px;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
         }
 
         .footer-section h3 {
             color: #d4af37;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
 
-        .footer-section p,
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
         .footer-section a {
             color: #ccc;
             text-decoration: none;
-            line-height: 1.8;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .footer-section a:hover {
             color: #d4af37;
+            transform: translateX(5px);
         }
 
         .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
             text-align: center;
-            color: #999;
+            color: #888;
+            font-size: 0.95rem;
+        }
+
+        /* Mobile Responsiveness for Footer */
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer {
+                padding: 60px 0 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+
+            .footer-section a:hover {
+                transform: none;
+            }
         }
 
         /* Smooth Animations */

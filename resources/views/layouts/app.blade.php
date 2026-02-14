@@ -208,27 +208,27 @@
         .footer {
             background: #1a1a1a;
             color: white;
-            padding: 80px 0 40px;
+            padding: 60px 0 30px; /* Reduced padding */
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 60px;
+            gap: 40px; /* Reduced gap */
+            margin-bottom: 40px; /* Reduced margin */
         }
 
         .footer-section h3 {
             color: #d4af37;
-            margin-bottom: 25px;
-            font-size: 1.4rem;
+            margin-bottom: 15px; /* Reduced margin */
+            font-size: 1.3rem; /* Slightly smaller font */
             font-weight: 600;
         }
 
         .footer-section p {
             color: #ccc;
-            line-height: 1.8;
-            margin-bottom: 15px;
+            line-height: 1.6; /* Reduced line height */
+            margin-bottom: 10px; /* Reduced margin */
         }
 
         .footer-section a {
@@ -246,7 +246,7 @@
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 25px;
+            margin-top: 20px; /* Reduced margin */
         }
 
         .social-link {
@@ -552,7 +552,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Influenceora. All rights reserved by <a href="https://metora.in/" style="color:white">Metora.</a></p>
+                <p>&copy; 2025 Influenceora. All rights reserved by <a href="https://metora.in/" style="color:gold">Metora.in</a></p>
             </div>
         </div>
     </footer>

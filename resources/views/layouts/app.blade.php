@@ -315,13 +315,13 @@
             /* Creators and Brands are naturally 1fr 1fr (Row 2) */
             .footer-section:nth-child(2),
             .footer-section:nth-child(3) {
-                text-align: center; /* or left? center looks good in small grid */
+                text-align: left;
             }
 
             /* Support section full width */
             .footer-section:nth-child(4) {
                 grid-column: span 2;
-                text-align: center;
+                text-align: left;
                 margin-top: 10px;
             }
 

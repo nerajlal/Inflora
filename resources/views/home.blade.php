@@ -505,8 +505,8 @@
         }
 
         .stats-grid {
-            grid-template-columns: 1fr;
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
         .stat-number {

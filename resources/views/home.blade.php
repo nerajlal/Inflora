@@ -323,7 +323,55 @@
     }
 
     /* Mobile Responsiveness */
+    @media (max-width: 992px) {
+        .hero {
+            min-height: auto;
+            padding: 100px 0 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+        }
+
+        .features {
+            padding: 80px 0;
+        }
+
+        .features-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .platform {
+            padding: 80px 0;
+        }
+
+        .platform-text h2 {
+            font-size: 2.2rem;
+        }
+
+        .stats {
+            padding: 60px 0;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+        }
+    }
+
     @media (max-width: 768px) {
+        .hero {
+            padding: 80px 0 40px;
+        }
+
         .hero-container {
             grid-template-columns: 1fr;
             gap: 40px;
@@ -331,7 +379,57 @@
         }
 
         .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+            justify-content: center;
+        }
+
+        .hero-visual {
+            height: 350px;
+        }
+
+        .floating-card {
+            padding: 15px;
+        }
+
+        .floating-card:nth-child(3) {
+            bottom: 0;
+            left: 20px;
+        }
+
+        .features {
+            padding: 60px 0;
+        }
+
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .feature-card {
+            padding: 30px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+        }
+
+        .stats {
+            padding: 50px 0;
+        }
+
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
         }
 
         .platform-content {
@@ -339,12 +437,101 @@
             gap: 40px;
         }
 
-        .features-grid {
-            grid-template-columns: 1fr;
+        .platform-visual {
+            height: 300px;
+        }
+
+        .platform-features li {
+            font-size: 1rem;
+        }
+
+        .cta-section {
+            padding: 60px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+        }
+
+        .cta-button {
+            padding: 16px 32px;
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+        }
+
+        .hero-visual {
+            height: 280px;
+        }
+
+        .floating-card {
+            padding: 12px;
+        }
+
+        .influencer-avatar {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+
+        .influencer-info h4 {
+            font-size: 0.9rem;
+        }
+
+        .influencer-info p {
+            font-size: 0.8rem;
+        }
+
+        .feature-card {
+            padding: 25px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 26px;
         }
 
         .stats-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+        }
+
+        .platform-visual {
+            height: 250px;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+        }
+
+        .cta-section p {
+            font-size: 1rem;
+        }
+
+        .cta-button {
+            padding: 14px 28px;
+            font-size: 1rem;
         }
     }
 </style>

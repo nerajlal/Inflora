@@ -198,6 +198,126 @@
         margin-bottom: 30px;
         opacity: 0.9;
     }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 992px) {
+        .pricing-hero {
+            padding: 120px 0 60px;
+        }
+
+        .pricing-hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .pricing-grid {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+        }
+
+        .pricing-card.premium {
+            transform: scale(1);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .pricing-hero {
+            padding: 100px 0 50px;
+        }
+
+        .pricing-hero h1 {
+            font-size: 2rem;
+        }
+
+        .pricing-hero p {
+            font-size: 1.1rem;
+        }
+
+        .pricing-plans {
+            padding: 60px 0 80px;
+        }
+
+        .pricing-card {
+            padding: 40px 30px;
+        }
+
+        .plan-header h3 {
+            font-size: 1.5rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+        }
+
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            padding: 25px;
+        }
+
+        .pricing-cta {
+            padding: 60px 0;
+        }
+
+        .pricing-cta h2 {
+            font-size: 2rem;
+        }
+
+        .pricing-cta p {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .pricing-hero h1 {
+            font-size: 1.7rem;
+        }
+
+        .pricing-hero p {
+            font-size: 1rem;
+        }
+
+        .pricing-card {
+            padding: 30px 20px;
+        }
+
+        .plan-icon {
+            width: 70px;
+            height: 70px;
+            font-size: 30px;
+        }
+
+        .plan-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .price {
+            font-size: 2.2rem;
+        }
+
+        .plan-features li {
+            font-size: 0.95rem;
+        }
+
+        .plan-button {
+            padding: 15px;
+            font-size: 1rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+        }
+
+        .pricing-cta h2 {
+            font-size: 1.7rem;
+        }
+
+        .pricing-cta div a {
+            padding: 14px 28px !important;
+            font-size: 1rem !important;
+        }
+    }
 </style>
 
 <!-- Pricing Hero Section -->

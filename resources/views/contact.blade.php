@@ -215,9 +215,40 @@
     }
 
     /* Mobile Responsiveness */
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
+        .contact-hero {
+            padding: 120px 0 60px;
+        }
+
         .contact-hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
+        }
+
+        .contact-content {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .contact-hero {
+            padding: 100px 0 50px;
+        }
+
+        .contact-hero-content h1 {
+            font-size: 2rem;
+        }
+
+        .contact-hero-content p {
+            font-size: 1.1rem;
+        }
+
+        .contact-section {
+            padding: 60px 0;
         }
 
         .contact-content {
@@ -229,13 +260,80 @@
             padding: 30px;
         }
 
+        .contact-form-header h2 {
+            font-size: 1.8rem;
+        }
+
         .form-row {
             grid-template-columns: 1fr;
             gap: 20px;
         }
 
+        .contact-info {
+            grid-template-columns: 1fr;
+        }
+
+        .faq-section {
+            padding: 60px 0;
+        }
+
         .faq-grid {
             grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .contact-hero {
+            padding: 80px 0 40px;
+        }
+
+        .contact-hero-content h1 {
+            font-size: 1.7rem;
+        }
+
+        .contact-hero-content p {
+            font-size: 1rem;
+        }
+
+        .contact-form-wrapper {
+            padding: 25px 20px;
+        }
+
+        .contact-form-header h2 {
+            font-size: 1.5rem;
+        }
+
+        .contact-form-header p {
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            font-size: 0.95rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.1rem;
+        }
+
+        .contact-card p {
+            font-size: 0.9rem;
+        }
+
+        .faq-item {
+            padding: 25px 20px;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
         }
     }
 </style>

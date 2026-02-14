@@ -295,22 +295,53 @@
 
         @media (max-width: 576px) {
             .footer {
-                padding: 60px 0 30px;
+                padding: 40px 0 20px;
             }
 
             .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px 15px; /* Reduced vertical gap, keep horizontal */
+                text-align: left;
+                margin-bottom: 30px;
+            }
+
+            /* Info section full width */
+            .footer-section:nth-child(1) {
+                grid-column: span 2;
                 text-align: center;
+                margin-bottom: 20px;
+            }
+
+            /* Creators and Brands are naturally 1fr 1fr (Row 2) */
+            .footer-section:nth-child(2),
+            .footer-section:nth-child(3) {
+                text-align: center; /* or left? center looks good in small grid */
+            }
+
+            /* Support section full width */
+            .footer-section:nth-child(4) {
+                grid-column: span 2;
+                text-align: center;
+                margin-top: 10px;
             }
 
             .footer-section h3 {
-                font-size: 1.3rem;
-                margin-bottom: 20px;
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+            }
+            
+            .footer-section p {
+                font-size: 0.9rem;
+                margin-bottom: 8px;
             }
 
             .footer-section a:hover {
                 transform: none;
+            }
+            
+            .social-links {
+                justify-content: center;
+                margin-top: 15px;
             }
         }
 

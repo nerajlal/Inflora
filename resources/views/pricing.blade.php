@@ -38,10 +38,11 @@
 
     .pricing-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 40px;
-        max-width: 1100px;
+        max-width: 1200px;
         margin: 0 auto;
+        align-items: start;
     }
 
     .pricing-card {
@@ -52,12 +53,14 @@
         border: 2px solid rgba(212, 175, 55, 0.1);
         transition: all 0.3s ease;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     .pricing-card.premium {
         border: 2px solid #d4af37;
         box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
-        transform: scale(1.05);
     }
 
     .popular-badge {
@@ -112,6 +115,7 @@
     .plan-features {
         list-style: none;
         margin-bottom: 40px;
+        flex-grow: 1;
     }
 
     .plan-features li {
@@ -212,10 +216,6 @@
         .pricing-grid {
             grid-template-columns: 1fr;
             max-width: 500px;
-        }
-
-        .pricing-card.premium {
-            transform: scale(1);
         }
     }
 

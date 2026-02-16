@@ -438,14 +438,14 @@
                 <div class="contact-card">
                     <div class="contact-icon">📧</div>
                     <h3>Email Us</h3>
-                    <p>hello@influenceora.com</p>
-                    <p>partnerships@influenceora.com</p>
+                    <p>info@metora.in</p>
+                    <!-- <p>partnerships@influenceora.com</p> -->
                 </div>
                 
                 <div class="contact-card">
                     <div class="contact-icon">📱</div>
                     <h3>Call Us</h3>
-                    <p>+91 9876543210</p>
+                    <p>+91 85474 70675</p>
                     <p>Mon - Fri, 9 AM - 6 PM IST</p>
                 </div>
                 
@@ -460,7 +460,7 @@
                     <div class="contact-icon">💬</div>
                     <h3>Social Media</h3>
                     <p>Follow us for updates</p>
-                    <p>@influenceora</p>
+                    <p>@metora.in</p>
                 </div>
             </div>
         </div>
@@ -476,10 +476,10 @@
         </div>
         
         <div class="faq-grid">
-            <div class="faq-item reveal">
+            <!-- <div class="faq-item reveal">
                 <h3>How do I join as an influencer?</h3>
                 <p>Simply click "Join as Influencer" and complete our application process. We review each application to ensure quality partnerships.</p>
-            </div>
+            </div> -->
             
             <div class="faq-item reveal">
                 <h3>What are the requirements to join?</h3>

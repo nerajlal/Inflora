@@ -12,7 +12,7 @@ use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 // --- Original Public Pages ---
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/join-as-influencer', [HomeController::class, 'index'])->name('home'); // Renamed route purpose
 Route::get('/pricing', [PricingController::class, 'index'])->name('pricing');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
@@ -20,8 +20,10 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact.sub
 // --- Influencer Marketplace Routes ---
 
 // Browse & Profile (Public)
-Route::get('/influencers', [InfluencerController::class, 'index'])->name('influencer.index');
+Route::get('/', [InfluencerController::class, 'index'])->name('influencer.index'); // New Root
 Route::get('/influencers/{id}', [InfluencerController::class, 'show'])->name('influencer.show');
+
+
 
 // Dashboard (Role-based)
 Route::get('/dashboard', [DashboardController::class, 'index'])

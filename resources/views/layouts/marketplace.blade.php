@@ -5,39 +5,77 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Inflora') }}</title>
+        <title>{{ config('app.name', 'Influenceora') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
         
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            gold: {
+                                400: '#f4d03f',
+                                500: '#D4AF37',
+                                600: '#b89628',
+                            },
+                            dark: {
+                                800: '#2c2c2c',
+                                900: '#1a1a1a',
+                            }
+                        },
+                        fontFamily: {
+                            sans: ['Lato', 'sans-serif'],
+                            serif: ['Playfair Display', 'serif'],
+                        }
+                    }
+                }
+            }
+        </script>
         <style>
-            body { font-family: 'Inter', sans-serif; }
+            .gold-gradient-text {
+                background: linear-gradient(135deg, #D4AF37, #f4d03f);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .gold-gradient-bg {
+                background: linear-gradient(135deg, #D4AF37, #f4d03f);
+            }
         </style>
     </head>
     <body class="font-sans antialiased bg-gray-50 text-gray-900 flex flex-col min-h-screen">
         
         <!-- Navigation -->
-        <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-gold-500/10">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16">
+                <div class="flex justify-between h-20"> <!-- Increased height for premium feel -->
                     <div class="flex">
                         <!-- Logo -->
                         <div class="shrink-0 flex items-center">
-                            <a href="{{ url('/') }}" class="text-2xl font-bold text-indigo-600">
-                                Inflora
+                            <a href="{{ url('/') }}" class="text-2xl font-bold font-serif gold-gradient-text">
+                                Influenceora
                             </a>
                         </div>
 
                         <!-- Navigation Links -->
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <a href="{{ route('influencer.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-900 hover:text-indigo-600 hover:border-indigo-300 focus:outline-none focus:text-indigo-700 focus:border-indigo-300 transition duration-150 ease-in-out {{ request()->routeIs('influencer.index') ? 'border-indigo-500 text-gray-900' : 'text-gray-500' }}">
+                            <a href="{{ route('home') }}" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gold-500 hover:border-gold-300 focus:outline-none transition duration-150 ease-in-out">
+                                For Creators
+                            </a>
+                            <a href="{{ route('influencer.index') }}" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-900 hover:text-gold-500 hover:border-gold-300 focus:outline-none border-gold-500 transition duration-150 ease-in-out">
                                 Browse Influencers
                             </a>
+                            @auth
+                                <a href="{{ route('dashboard') }}" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 hover:text-gold-500 hover:border-gold-300 focus:outline-none transition duration-150 ease-in-out {{ request()->routeIs('dashboard') ? 'border-gold-500 text-gray-900' : 'text-gray-500' }}">
+                                    Dashboard
+                                </a>
+                            @endauth
                         </div>
                     </div>
 
@@ -47,7 +85,7 @@
                             <div class="ml-3 relative" x-data="{ open: false }">
                                 <div>
                                     <button @click="open = !open" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                        <span class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                        <span class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gold-600 focus:outline-none transition ease-in-out duration-150">
                                             {{ Auth::user()->name }}
                                             <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -65,18 +103,11 @@
                                 </div>
                             </div>
                         @else
-                            <a href="{{ route('login') }}" class="text-sm font-medium text-gray-700 hover:text-gray-900">Log in</a>
-                            <a href="{{ route('register') }}" class="ml-8 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">Get Started</a>
+                            <a href="{{ route('login') }}" class="text-sm font-medium text-gray-700 hover:text-gold-600">Log in</a>
+                            <a href="{{ route('home') }}" class="ml-8 inline-flex items-center px-6 py-2 border border-transparent text-sm font-medium rounded-full shadow-sm text-white gold-gradient-bg hover:opacity-90 transition-opacity">
+                                Join as Influencer
+                            </a>
                         @endauth
-                    </div>
-                    
-                    <!-- Mobile menu button -->
-                    <div class="-mr-2 flex items-center sm:hidden">
-                        <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
-                            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -88,32 +119,37 @@
         </main>
 
         <!-- Footer -->
-        <footer class="bg-gray-800 text-white py-8 mt-auto">
+        <footer class="bg-dark-900 text-white py-12 mt-auto">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">Inflora</h3>
-                        <p class="text-gray-400 text-sm">Connecting brands with authentic influencers to create impactful marketing campaigns.</p>
+                        <h3 class="text-lg font-serif font-bold mb-4 text-gold-500">Influenceora</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">The premium platform connecting elite influencers with luxury brands worldwide.</p>
                     </div>
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                        <h3 class="text-lg font-serif font-bold mb-4 text-white">For Creators</h3>
                         <ul class="space-y-2 text-gray-400 text-sm">
-                            <li><a href="{{ url('/') }}" class="hover:text-white">Home</a></li>
-                            <li><a href="{{ route('influencer.index') }}" class="hover:text-white">Browse Influencers</a></li>
-                            <li><a href="{{ route('login') }}" class="hover:text-white">Login</a></li>
-                            <li><a href="{{ route('register') }}" class="hover:text-white">Register</a></li>
+                            <li><a href="#" class="hover:text-gold-500 transition">Join Platform</a></li>
+                            <li><a href="#" class="hover:text-gold-500 transition">Creator Resources</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                        <h3 class="text-lg font-serif font-bold mb-4 text-white">For Brands</h3>
                         <ul class="space-y-2 text-gray-400 text-sm">
-                            <li>support@inflora.com</li>
-                            <li>Twitter: @inflora</li>
+                            <li><a href="#" class="hover:text-gold-500 transition">Partner With Us</a></li>
+                            <li><a href="#" class="hover:text-gold-500 transition">Campaign Management</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-serif font-bold mb-4 text-white">Support</h3>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li><a href="#" class="hover:text-gold-500 transition">Help Center</a></li>
+                            <li><a href="{{ route('contact') }}" class="hover:text-gold-500 transition">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-                    &copy; {{ date('Y') }} Inflora. All rights reserved.
+                <div class="border-t border-gray-800 mt-10 pt-8 text-center text-gray-500 text-sm">
+                    &copy; {{ date('Y') }} Influenceora. All rights reserved by <a href="https://metora.in/" class="text-gold-500 hover:text-white transition">Metora.in</a>
                 </div>
             </div>
         </footer>

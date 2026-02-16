@@ -485,22 +485,28 @@
 </head>
 <body>
     <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="{{ route('home') }}" class="logo">Inflora</a>
+            <a href="{{ route('influencer.index') }}" class="logo">Inflora</a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="{{ route('home') }}#home">Home</a></li>
+                <li><a href="{{ route('home') }}">For Creators</a></li>
                 <li><a href="{{ route('home') }}#features">Features</a></li>
                 <li><a href="{{ route('home') }}#platform">Platform</a></li>
-                <li><a href="{{ route('pricing') }}">Pricing</a></li>
                 <li><a href="{{ route('contact') }}">Contact</a></li>
+                <li><a href="{{ route('influencer.index') }}" class="text-indigo-600">Browse</a></li>
+                @auth
+                    <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                @else
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                @endauth
             </ul>
             <div class="mobile-menu-toggle" id="mobileMenuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <a href="#" class="cta-btn">Join as Influencer</a>
+            <a href="{{ route('register') }}" class="cta-btn">Join as Influencer</a>
         </div>
     </nav>
 
